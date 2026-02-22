@@ -30,7 +30,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
     position: fixed;
     inset: 0;
     overflow: hidden;
@@ -53,7 +52,7 @@ body {
     align-items: center;
     padding: calc(12px * var(--btn-scale)) calc(14px * var(--btn-scale));
     position: fixed;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     overflow: hidden;
     pointer-events: none;
@@ -62,7 +61,7 @@ body {
 
 #TopPanel {
     bottom: auto;
-    top: 0px;
+    top: 0;
 }
 
 .ui-button {
@@ -70,9 +69,8 @@ body {
     cursor: pointer;
     pointer-events: auto;
     background-color: var(--btn-color);
-    border-color: var(--btn-border-color);
     padding: calc(5px * var(--btn-scale));
-    border: calc(1px * var(--btn-scale)) solid white;
+    border: calc(1px * var(--btn-scale)) solid var(--btn-border-color);
     border-bottom-left-radius: calc(12px * var(--btn-scale));
     border-top-right-radius: calc(12px * var(--btn-scale));
     min-height: calc(35px * var(--btn-scale));
@@ -88,16 +86,16 @@ body {
 
 .ui-button.left {
     border-bottom-left-radius: calc(12px * var(--btn-scale));
-    border-top-right-radius: 0px;
+    border-top-right-radius: 0;
 }
 
 .ui-button.center {
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .ui-button.right {
-    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0;
     border-top-right-radius: calc(12px * var(--btn-scale));
 }
 
