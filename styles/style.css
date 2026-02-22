@@ -1,0 +1,112 @@
+:root {
+    --bg: #000107;
+    --bg-fade: #140015;
+    --white: #ffffff;
+
+    --btn-scale: 1.5;
+    --btn-radius: 10;
+    --btn-color: black;
+    --btn-border-color: white;
+    --btn-hover-color: #3b0087;
+    --btn-active-color: #b700ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Main', 'Ubuntu', verdana, sans-serif;
+}
+
+#MainContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    touch-action: none;
+    animation: pretty 10s infinite;
+}
+@keyframes pretty {
+    0%{background-color: var(--bg)}
+    50%{background-color: var(--bg-fade)}
+    100%{background-color: var(--bg)}
+}
+
+#BottomPanel,
+#TopPanel {
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: calc(4px * var(--btn-scale));
+    align-items: center;
+    padding: calc(12px * var(--btn-scale)) calc(14px * var(--btn-scale));
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#TopPanel {
+    bottom: auto;
+    top: 0px;
+}
+
+.ui-button {
+    z-index: 80;
+    cursor: pointer;
+    pointer-events: auto;
+    background-color: var(--btn-color);
+    border-color: var(--btn-border-color);
+    padding: calc(5px * var(--btn-scale));
+    border: calc(1px * var(--btn-scale)) solid white;
+    border-bottom-left-radius: calc(12px * var(--btn-scale));
+    border-top-right-radius: calc(12px * var(--btn-scale));
+    min-height: calc(35px * var(--btn-scale));
+    gap: calc(8px * var(--btn-scale));
+    display: flex;
+    align-items: center;
+    transition: opacity 300ms, transform 100ms, background-color 100ms;
+}
+
+.ui-button img {
+
+}
+
+.ui-button.left {
+    border-bottom-left-radius: calc(12px * var(--btn-scale));
+    border-top-right-radius: 0px;
+}
+
+.ui-button.center {
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.ui-button.right {
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: calc(12px * var(--btn-scale));
+}
+
+.ui-button:hover {
+    transform: scale(1.1);
+    background-color: var(--btn-hover-color);
+}
+
+.ui-button:active {
+    transform: scale(0.95);
+    background-color: var(--btn-active-color);
+}
