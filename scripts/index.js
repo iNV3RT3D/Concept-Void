@@ -1,4 +1,48 @@
-//Background Music, a lot this stuff is based on https://artifyber.xyz/ BGM logic, adjusted for web audio
+// -------------------------------
+// DRAG SYSTEM
+// -------------------------------
+
+let isDragging = false;
+
+let currentX = 0, currentY = 0;
+let startX = 0, startY = 0;
+function EnableDragging() {
+    function beginDragging(clientX, clientY) {
+        isDragging = true;
+        document.body.style.cursor = 'move';
+
+        startX = clientX - currentX;
+        startY = clientY - currentY;
+    }
+
+    function dragUpdate(clientX, clientY) {
+        if (!isDragging) {
+            return;
+        }
+
+        currentX = clientX - startX;
+        currentY = clientY - startY;
+    }
+
+    function endDragging() {
+        isDragging = false;
+        document.body.style.cursor = 'default';
+    }
+
+    const MapContainer = document.getElementById("MapContainer");
+
+    MapContainer.addEventListener('mousedown', (e) => { beginDragging(e.clientX, e.clientY); });
+    window.addEventListener('mousemove', (e) => { dragUpdate(e.clientX, e.clientY); });
+    window.addEventListener('mouseup', endDragging);
+}
+
+EnableDragging();
+
+// -----------------------
+// BACKGROUND MUSIC
+// -----------------------
+
+//A lot this stuff is based on https://artifyber.xyz/ BGM logic, adjusted for web audio
 let bgmInitialized = false;
 
 const audioContext = new AudioContext();
