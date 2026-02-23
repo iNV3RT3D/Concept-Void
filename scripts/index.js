@@ -15,13 +15,19 @@ function EnableDragging() {
         startY = clientY - currentY;
     }
 
+    let lastDrag = 0;
     function dragUpdate(clientX, clientY) {
+        const now = performance.now();
+        if (now - lastDrag < 16) return;
+        lastDrag = now;
         if (!isDragging) {
             return;
         }
 
         currentX = clientX - startX;
         currentY = clientY - startY;
+
+        updateParallaxTransforms(currentX, currentY, 1)
     }
 
     function endDragging() {
@@ -34,6 +40,26 @@ function EnableDragging() {
     MapContainer.addEventListener('mousedown', (e) => { beginDragging(e.clientX, e.clientY); });
     window.addEventListener('mousemove', (e) => { dragUpdate(e.clientX, e.clientY); });
     window.addEventListener('mouseup', endDragging);
+
+    updateParallaxTransforms(0,0,1);
+}
+
+function updateParallaxTransforms(x, y, scale){
+    const elements = document.getElementsByClassName('MapBound');
+
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+
+        const elementZ = parseFloat(element.dataset.z) || 1;
+        const elementX = parseFloat(element.dataset.x) || 0;
+        const elementY = parseFloat(element.dataset.y) || 0;
+
+        const fX = elementX * elementZ + x * elementZ;
+        const fY = elementY * elementZ + y * elementZ;
+        const fScale = scale * elementZ;
+
+        element.style.transform = `translate(${fX}px, ${fY}px) scale(${fScale})`;
+    }
 }
 
 EnableDragging();
@@ -101,6 +127,7 @@ async function setupTracks() {
 
 //Presets of audios to play together
 const bgmPresets = {
+    silent: [],
     primary: ["all", "primary"],
     voidCity: ["all", "voidCity"],
     drifters: ["all", "drifters"],
@@ -129,7 +156,6 @@ function playBgmPreset(preset){
     preset.forEach(function(key) {
         //Fade preset tracks to max. Instantly overrides previous fade done on all tracks.
         //Therefore, as far as I can tell, no check needed above.
-        console.log(key);
         fadeGain(bgmGains[key], 1, 0.005);
     });
 }

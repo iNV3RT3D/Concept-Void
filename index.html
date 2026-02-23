@@ -11,7 +11,19 @@
 <body>
     <h1>Hello World!</h1>
     <div id="MainContainer">
-        <div id="MapContainer"></div>
+        <div id="MapContainer">
+            <div class="MapBound" data-z="0.25" data-x="0" data-y="0">
+                <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
+            </div>
+            <div class="MapBound" data-z="0.5" data-x="0" data-y="0">
+                <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
+            </div>
+            <div class="MapBound" data-z="1" data-x="0" data-y="0">
+                <div id="About" class="ui-map-button" title="ABOUT!!??!!?!">
+                    <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
+                </div>
+            </div>
+        </div>
         <div id="TopPanel">
             <button id="searchBtn" class="ui-button left" title="SEARCH!!??!!?!">
                 <img src="assets/icons/search.svg" alt="Logo" width="24" height="24">
