@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26a752fe-f876-4fba-b644-dc8ecadccf11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/audio/music/CONCEPT VOID - DRIFTERS.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/audio/music/CONCEPT VOID - PERSISTANT.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/audio/music/CONCEPT VOID - PRIMARY.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/audio/music/CONCEPT VOID - VOID CITY.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
+    <list default="true" id="26a752fe-f876-4fba-b644-dc8ecadccf11" name="Changes" comment="Cleaning up the styling a bit.">
+      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +83,25 @@
       <updated>1771696837295</updated>
       <workItem from="1771696838282" duration="17851000" />
       <workItem from="1771740658627" duration="1419000" />
-      <workItem from="1771778561468" duration="8946000" />
+      <workItem from="1771778561468" duration="15896000" />
     </task>
+    <task id="LOCAL-00001" summary="Forgot to commit up to this point">
+      <option name="closed" value="true" />
+      <created>1771801371590</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1771801371590</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Cleaning up the styling a bit.">
+      <option name="closed" value="true" />
+      <created>1771801525402</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1771801525402</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +117,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Forgot to commit up to this point" />
+    <MESSAGE value="Cleaning up the styling a bit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaning up the styling a bit." />
   </component>
 </project>

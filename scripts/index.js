@@ -1,67 +1,111 @@
-//Background Music, most this stuff is based on https://artifyber.xyz/ BGM logic
+//Background Music, a lot this stuff is based on https://artifyber.xyz/ BGM logic, adjusted for web audio
 let bgmInitialized = false;
 
-//Easy reference to all audio background music audio elements
-const bgm = {
-    all: document.getElementById('bgmPersistent'),
-    primary: document.getElementById('bgmPrimary'),
-    voidCity: document.getElementById('bgmVoidCity'),
-    drifters: document.getElementById('bgmDrifters'),
+const audioContext = new AudioContext();
+
+//TODO: I could probably compress these three dictionaries into one.
+const bgmPaths = {
+    all: "assets/audio/music/CONCEPT VOID - PERSISTANT.mp3",
+    primary: "assets/audio/music/CONCEPT VOID - PRIMARY.mp3",
+    voidCity: "assets/audio/music/CONCEPT VOID - VOID CITY.mp3",
+    drifters: "assets/audio/music/CONCEPT VOID - DRIFTERS.mp3",
+}
+
+const bgmTracks = {
+    all: audioContext.createBufferSource(),
+    primary: audioContext.createBufferSource(),
+    voidCity: audioContext.createBufferSource(),
+    drifters: audioContext.createBufferSource(),
+}
+
+const bgmGains = {
+    all: audioContext.createGain(),
+    primary: audioContext.createGain(),
+    voidCity: audioContext.createGain(),
+    drifters: audioContext.createGain(),
+}
+
+async function getFile(audioContext, filepath) {
+    const response = await fetch(filepath);
+    const arrayBuffer = await response.arrayBuffer();
+    return await audioContext.decodeAudioData(arrayBuffer);
+}
+
+async function setupTracks() {
+    let loaded = 0;
+    for (let bgmKey in bgmTracks) {
+        const filePath = bgmPaths[bgmKey];
+        getFile(audioContext, filePath).then(r => {
+            console.log(filePath);
+            const source = bgmTracks[bgmKey];
+            const gain = bgmGains[bgmKey];
+            source.loop = true;
+            source.buffer = r;
+            source.connect(gain).connect(audioContext.destination);
+            loaded+=1;
+        })
+    }
+
+    await new Promise(resolve => {
+        setInterval(() => {
+            if (loaded === Object.keys(bgmTracks).length) {
+                resolve();
+            }
+        }, 1000);
+    });
 }
 
 //Presets of audios to play together
 const bgmPresets = {
-    primary: [bgm.all, bgm.primary],
-    voidCity: [bgm.all, bgm.voidCity],
-    drifters: [bgm.all, bgm.drifters],
+    primary: ["all", "primary"],
+    voidCity: ["all", "voidCity"],
+    drifters: ["all", "drifters"],
 }
 
 //Start playing all music silently, active tracks will fade to max volume when ready
-function prepareBgm(){
-    for (let bgmKey in bgm) {
-        bgm[bgmKey].volume = 0.0;
-        bgm[bgmKey].play();
-        bgm[bgmKey].currentTime = 0.0;
+async function prepareBgm(){
+    await setupTracks();
+
+    console.log("Loaded BGM music");
+    for (let bgmKey in bgmTracks) {
+        bgmTracks[bgmKey].start();
+        bgmGains[bgmKey].gain.value = 0.0;
     }
     bgmInitialized = true;
 }
 
 //Fade audio in preset to max, and all others to zero
 function playBgmPreset(preset){
-    //Sometimes silent audio drifts? Also, setting current time pauses audio temporarily.
-    //Set the constant drum loop to its own time to perform that short pause, so that
-    //when we sync other audios it doesn't run away.
-    bgm.all.currentTime = bgm.all.currentTime;
-    for (let bgmKey in bgm) {
-        const aud = bgm[bgmKey];
+    for (let bgmKey in bgmGains) {
+        const gainNode = bgmGains[bgmKey];
         //Fade out audio to zero, applied to all tracks
-        fadeAudio(aud, 0, 0.005);
-        //Match audio time with drum loop time.
-        aud.currentTime = bgm.all.currentTime;
+        fadeGain(gainNode, 0, 0.005);
     }
-    for (let presetKey in preset) {
+
+    preset.forEach(function(key) {
         //Fade preset tracks to max. Instantly overrides previous fade done on all tracks.
         //Therefore, as far as I can tell, no check needed above.
-        fadeAudio(preset[presetKey], 1, 0.005);
-    }
+        console.log(key);
+        fadeGain(bgmGains[key], 1, 0.005);
+    });
 }
 
 //Cooler than setting volume directly.
-function fadeAudio(audio, t, rate){
-    clearInterval(audio._fadeInterval);
+function fadeGain(gainNode, t, rate){
+    clearInterval(gainNode._fadeInterval);
 
     const targ = t;
 
-    audio._fadeInterval = setInterval(() => {
-        const current = audio.volume;
+    gainNode._fadeInterval = setInterval(() => {
+        const current = gainNode.gain.value;
         const diff = current - targ;
 
         if(Math.abs(diff) < 0.01){
-            audio.volume = targ;
-            clearInterval(audio._fadeInterval);
+            gainNode.gain.value = targ;
+            clearInterval(gainNode._fadeInterval);
         }
 
-        audio.volume = Math.min(Math.max(targ, current-rate), current+rate);
+        gainNode.gain.value = Math.min(Math.max(targ, current-rate), current+rate);
     })
 }
 
@@ -69,9 +113,10 @@ function fadeAudio(audio, t, rate){
 function interactInitialize(){
     {
         if(!bgmInitialized){
-            prepareBgm();
-            playBgmPreset(bgmPresets.primary);
             document.removeEventListener('mousedown', interactInitialize);
+            prepareBgm().then(() => {
+
+            });
         }
     }
 }
