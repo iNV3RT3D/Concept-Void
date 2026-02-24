@@ -35,7 +35,7 @@ function EnableDragging() {
         document.body.style.cursor = 'default';
     }
 
-    const MapContainer = document.getElementById("MapContainer");
+    const MapContainer = document.getElementById("mapContainer");
 
     MapContainer.addEventListener('mousedown', (e) => { beginDragging(e.clientX, e.clientY); });
     window.addEventListener('mousemove', (e) => { dragUpdate(e.clientX, e.clientY); });
@@ -45,7 +45,7 @@ function EnableDragging() {
 }
 
 function updateParallaxTransforms(x, y, scale){
-    const elements = document.getElementsByClassName('MapBound');
+    const elements = document.getElementsByClassName('map-bound');
 
     for (let i = 0; i < elements.length; i++) {
         const element = elements[i];

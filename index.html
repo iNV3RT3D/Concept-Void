@@ -10,21 +10,31 @@
 </head>
 <body>
     <h1>Hello World!</h1>
-    <div id="MainContainer">
-        <div id="MapContainer">
-            <div class="MapBound" data-z="0.25" data-x="0" data-y="0">
+    <div id="mainContainer">
+        <div id="mapContainer">
+            <div class="map-bound" data-z="0.25" data-x="0" data-y="0">
                 <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
             </div>
-            <div class="MapBound" data-z="0.5" data-x="0" data-y="0">
+            <div class="map-bound" data-z="0.5" data-x="0" data-y="0">
                 <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
             </div>
-            <div class="MapBound" data-z="1" data-x="0" data-y="0">
+            <div class="map-bound" data-z="1" data-x="0" data-y="0">
                 <div id="About" class="ui-map-button" title="ABOUT!!??!!?!">
                     <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
                 </div>
             </div>
         </div>
-        <div id="TopPanel">
+        <div id="infoContainer" class="info-container">
+            <div id="infoHeader" class="info-header">
+                <div id="infoHeaderTitle" class="info-header-title">Concept Void</div>
+                <div id="infoHeaderDescription" class="info-header-description">The place of lost ideas</div>
+                <hr>
+            </div>
+            <div id="infoBody" class="info-body">
+
+            </div>
+        </div>
+        <div id="topPanel">
             <button id="searchBtn" class="ui-button left" title="SEARCH!!??!!?!">
                 <img src="assets/icons/search.svg" alt="Logo" width="24" height="24">
             </button>
@@ -32,14 +42,10 @@
                 <img src="assets/icons/settings.svg" alt="Logo" width="24" height="24">
             </button>
         </div>
-        <div id="BottomPanel">
+        <div id="bottomPanel">
 
         </div>
     </div>
-    <audio id="bgmPersistent" src="assets/audio/music/CONCEPT VOID - PERSISTANT.mp3" preload="auto" loop="loop"></audio>
-    <audio id="bgmPrimary" src="assets/audio/music/CONCEPT VOID - PRIMARY.mp3" preload="auto" loop="loop"></audio>
-    <audio id="bgmVoidCity" src="assets/audio/music/CONCEPT VOID - VOID CITY.mp3" preload="auto" loop="loop"></audio>
-    <audio id="bgmDrifters" src="assets/audio/music/CONCEPT VOID - DRIFTERS.mp3" preload="auto" loop="loop"></audio>
     <script src="scripts/index.js"></script>
 </body>
 </html>
