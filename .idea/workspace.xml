@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26a752fe-f876-4fba-b644-dc8ecadccf11" name="Changes" comment="Drag system. currentX/currentY values change as individual drags window.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
+    <list default="true" id="26a752fe-f876-4fba-b644-dc8ecadccf11" name="Changes" comment="Beginning implementation of info panels.">
       <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +63,8 @@
       <recent name="C:\Users\alext\WebstormProjects\VoidSite\assets\audio\music" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alext\WebstormProjects\VoidSite\assets\fonts" />
+      <recent name="C:\Users\alext\WebstormProjects\VoidSite" />
       <recent name="C:\Users\alext\WebstormProjects\VoidSite\assets\audio\music" />
       <recent name="C:\Users\alext\WebstormProjects\VoidSite\scripts" />
     </key>
@@ -87,7 +86,7 @@
       <workItem from="1771696838282" duration="17851000" />
       <workItem from="1771740658627" duration="1419000" />
       <workItem from="1771778561468" duration="21771000" />
-      <workItem from="1771866247296" duration="8185000" />
+      <workItem from="1771866247296" duration="14696000" />
     </task>
     <task id="LOCAL-00001" summary="Forgot to commit up to this point">
       <option name="closed" value="true" />
@@ -129,7 +128,31 @@
       <option name="project" value="LOCAL" />
       <updated>1771812799636</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Drag system complete. Example in HTML.">
+      <option name="closed" value="true" />
+      <created>1771884598731</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1771884598731</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Drag system complete. Example in HTML.">
+      <option name="closed" value="true" />
+      <created>1771884636641</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1771884636641</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Beginning implementation of info panels.">
+      <option name="closed" value="true" />
+      <created>1771899780610</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1771899780610</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +175,9 @@
     <MESSAGE value="Swapped from &lt;audio&gt; to web audio system for BGM." />
     <MESSAGE value="fixup! Drag system. currentX/currentY values change as individual drags window." />
     <MESSAGE value="Drag system. currentX/currentY values change as individual drags window." />
-    <option name="LAST_COMMIT_MESSAGE" value="Drag system. currentX/currentY values change as individual drags window." />
+    <MESSAGE value="fixup! Drag system complete. Example in HTML." />
+    <MESSAGE value="Drag system complete. Example in HTML." />
+    <MESSAGE value="Beginning implementation of info panels." />
+    <option name="LAST_COMMIT_MESSAGE" value="Beginning implementation of info panels." />
   </component>
 </project>

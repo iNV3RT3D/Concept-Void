@@ -3,6 +3,11 @@
     --bg-fade: #140015;
     --white: #ffffff;
 
+    --hr-color: #6a0085;
+
+    --title-color: #ffffff;
+    --subtitle-color: #9c3992;
+
     --btn-scale: 1.5;
     --btn-radius: 10;
     --btn-color: black;
@@ -21,13 +26,19 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: Union;
+    font-display: swap;
+    src: url(../assets/fonts/UnionRodeo.ttf);
+}
+
 html,
 body {
     height: 100%;
     margin: 0;
     background: var(--bg);
     color: var(--white);
-    font-family: 'Main', 'Ubuntu', verdana, sans-serif;
+    font-family: Union, Ubuntu;
 }
 
 #mainContainer {
@@ -71,7 +82,7 @@ body {
 
 hr {
     border: none;
-    border-top: 6px solid #b700ff;
+    border-top: 6px solid var(--hr-color);
     margin: 12px 0;
 }
 
@@ -89,10 +100,12 @@ hr {
 
 .info-header-title {
     font-size: 36px;
+    color: var(--title-color);
 }
 
 .info-header-description {
     font-size: 16px;
+    color: var(--subtitle-color);
 }
 
 #bottomPanel,
