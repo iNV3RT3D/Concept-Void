@@ -41,12 +41,14 @@ let cards = [
         id: "about",
         title: "About Me",
         subtitle: "I do things, sometimes.",
+        musicPreset: 'primary',
     },
     //LOCATIONS
     {
         id: "conceptVoid",
         title: "The Concept Void",
         subtitle: "The only thing that can truly be created or destroyed are what we keep in our minds.",
+        musicPreset: 'primary',
         content: [
             {
                 id: "info",
@@ -73,12 +75,30 @@ let cards = [
     {
         id: "voidCity",
         title: "Void City",
-        subtitle: "Home of MOST sentient void entities.",
+        subtitle: "Home of sentient void entities.",
+        musicPreset: 'voidCity',
         content: [
             {
                 id: "info",
                 fullDisplay: true,
-                content: ``,
+                content: `Most void entities can be found in cities like this one, going about their day. These cities are constantly expanding as more void entities form and move in.`,
+                noClick: true,
+                banner: true,
+            },
+            {
+                cardId: "conceptVoid",
+            },
+            {
+                cardId: "voidEntities",
+            },
+            {
+                id: "individuals",
+                title: "Citizens",
+                noClick: true,
+                separator: true,
+            },
+            {
+                groupId: "voidEntities",
             }
         ]
     },

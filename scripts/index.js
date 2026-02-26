@@ -200,8 +200,11 @@ document.addEventListener('mousedown', interactInitialize)
 // UI BUTTON EVENTS
 // ---------------------
 
-document.addEventListener('displayCard', function(){
+document.addEventListener('displayCard', function(ev){
     MapContainer.classList.add('blur')
+    if(ev.data.musicPreset){
+        playBgmPreset(bgmPresets[ev.data.musicPreset]);
+    }
 });
 document.addEventListener('hideCard', function(){
     MapContainer.classList.remove('blur')

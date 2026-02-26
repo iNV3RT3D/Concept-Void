@@ -94,6 +94,29 @@ hr {
     margin: 12px 0;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+    overflow: visible;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000000;
+    overflow: visible;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--btn-hover-color);
+    border: 1px solid var(--btn-border-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--btn-active-color);
+}
+
 .info-container {
     display: flex;
     flex-direction: column;
@@ -102,8 +125,10 @@ hr {
     padding: 32px;
     min-width: 100%;
     min-height: 100%;
+    max-height: 100%;
     transition: opacity 300ms;
     transform: scale(1);
+    overflow: auto;
     opacity: 1;
 }
 
