@@ -9,25 +9,28 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
     <div id="mainContainer">
-        <div id="mapContainer">
-            <div class="map-bound" data-z="0.25" data-x="0" data-y="0">
-                <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
-            </div>
-            <div class="map-bound" data-z="0.5" data-x="0" data-y="0">
-                <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
-            </div>
+        <div id="mapContainer" class="map-container">
             <div class="map-bound" data-z="1" data-x="0" data-y="0">
                 <div id="About" class="ui-map-button" title="ABOUT!!??!!?!">
                     <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
                 </div>
             </div>
+            <div class="map-bound" data-z="0.7" data-x="0" data-y="-300">
+                <div id="ConceptVoid" class="ui-map-button" title="VOID CITY!!??!!?!">
+                    <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
+                </div>
+            </div>
+            <div class="map-bound" data-z="0.8" data-x="500" data-y="-500">
+                <div id="VoidCity" class="ui-map-button" title="VOID CITY!!??!!?!">
+                    <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
+                </div>
+            </div>
         </div>
-        <div id="infoContainer" class="info-container">
+        <div id="infoContainer" class="info-container hidden">
             <div id="infoHeader" class="info-header">
                 <div id="infoHeaderTitle" class="info-header-title">Concept Void</div>
-                <div id="infoHeaderDescription" class="info-header-description">The place of lost ideas</div>
+                <div id="infoHeaderSubtitle" class="info-header-description">The place of lost ideas</div>
                 <hr>
             </div>
             <div id="infoBody" class="info-body">
@@ -35,17 +38,28 @@
             </div>
         </div>
         <div id="topPanel">
-            <button id="searchBtn" class="ui-button left" title="SEARCH!!??!!?!">
+            <div id="searchBtn" class="ui-button left" title="SEARCH!!??!!?!">
                 <img src="assets/icons/search.svg" alt="Logo" width="24" height="24">
-            </button>
-            <button id="settingsBtn" class="ui-button right" title="OPTIONS!!??!!?!">
+                <div class="expand-text">SEARCH</div>
+            </div>
+            <div id="settingsBtn" class="ui-button right" title="OPTIONS!!??!!?!">
                 <img src="assets/icons/settings.svg" alt="Logo" width="24" height="24">
-            </button>
+                <div class="expand-text">SETTINGS</div>
+            </div>
         </div>
         <div id="bottomPanel">
-
+            <div id="closeBtn" class="ui-button left" title="CLOSE!!??!!?!">
+                <img src="assets/icons/close.svg" alt="Logo" width="24" height="24">
+                <div class="expand-text">CLOSE</div>
+            </div>
+            <div id="backBtn" class="ui-button right" title="BACK!!??!!?!">
+                <img src="assets/icons/back.svg" alt="Logo" width="24" height="24">
+                <div class="expand-text">BACK</div>
+            </div>
         </div>
     </div>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/menusystem.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 </html>

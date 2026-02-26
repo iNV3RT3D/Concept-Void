@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26a752fe-f876-4fba-b644-dc8ecadccf11" name="Changes" comment="Beginning implementation of info panels.">
+    <list default="true" id="26a752fe-f876-4fba-b644-dc8ecadccf11" name="Changes" comment="Some font styling">
+      <change afterPath="$PROJECT_DIR$/scripts/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/menusystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +22,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -54,7 +60,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;consents&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.spelling&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -86,7 +92,10 @@
       <workItem from="1771696838282" duration="17851000" />
       <workItem from="1771740658627" duration="1419000" />
       <workItem from="1771778561468" duration="21771000" />
-      <workItem from="1771866247296" duration="14696000" />
+      <workItem from="1771866247296" duration="18533000" />
+      <workItem from="1771955333276" duration="20082000" />
+      <workItem from="1772040083348" duration="9370000" />
+      <workItem from="1772127110503" duration="8207000" />
     </task>
     <task id="LOCAL-00001" summary="Forgot to commit up to this point">
       <option name="closed" value="true" />
@@ -152,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771899780610</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Some font styling">
+      <option name="closed" value="true" />
+      <created>1771902638019</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1771902638019</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +195,7 @@
     <MESSAGE value="fixup! Drag system complete. Example in HTML." />
     <MESSAGE value="Drag system complete. Example in HTML." />
     <MESSAGE value="Beginning implementation of info panels." />
-    <option name="LAST_COMMIT_MESSAGE" value="Beginning implementation of info panels." />
+    <MESSAGE value="Some font styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some font styling" />
   </component>
 </project>

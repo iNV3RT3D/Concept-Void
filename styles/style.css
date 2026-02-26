@@ -7,6 +7,9 @@
 
     --title-color: #ffffff;
     --subtitle-color: #9c3992;
+    --text-color: #cacaca;
+
+    --card-size: 1;
 
     --btn-scale: 1.5;
     --btn-radius: 10;
@@ -58,7 +61,7 @@ body {
     100%{background-color: var(--bg)}
 }
 
-#mapContainer {
+.map-container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -70,6 +73,12 @@ body {
     touch-action: none;
     user-select: none;
     position: absolute;
+    filter: blur(0);
+    transition: filter 300ms;
+}
+
+.blur {
+    filter: blur(0.5rem);
 }
 
 .map-bound {
@@ -77,7 +86,6 @@ body {
     transition: transform 0.5s cubic-bezier(.2, .9, .2, 1), scale 1000ms;
     align-items: center;
     justify-content: center;
-    z-index: 10;
 }
 
 hr {
@@ -94,7 +102,8 @@ hr {
     padding: 32px;
     min-width: 100%;
     min-height: 100%;
-    transition: opacity 100ms;
+    transition: opacity 300ms;
+    transform: scale(1);
     opacity: 1;
 }
 
@@ -106,6 +115,111 @@ hr {
 .info-header-description {
     font-size: 16px;
     color: var(--subtitle-color);
+}
+
+.info-body {
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.card {
+    display: flex;
+    position:relative;
+    flex-direction: column;
+    border: 5px solid var(--hr-color);
+    border-radius: calc(12px * var(--card-size));
+    padding: calc(6px * var(--card-size));
+    width: calc(240px * var(--card-size));
+    height: calc(300px * var(--card-size));
+    backdrop-filter: blur(1rem);
+
+    transition: transform 100ms;
+    transform: scale(1);
+
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.075);
+}
+.card:active {
+    transform: scale(0.95);
+}
+
+.card .card-text {
+    background-color: var(--hr-color);
+    border-radius: calc(6px * var(--card-size));
+    padding: calc(6px * var(--card-size));
+}
+
+.card .card-text-title {
+    font-size: calc(16px * var(--card-size));
+    text-align: center;
+}
+
+.card .card-text-subtitle {
+    font-size: calc(12px * var(--card-size));
+    text-align: center;
+    color: var(--text-color);
+}
+
+.card .card-content {
+    color: var(--text-color);
+}
+
+.card .card-content h4 {
+    color: var(--white);
+    font-weight: normal;
+}
+
+.card .card-slider {
+    width: 100%;
+}
+
+.card[data-banner="true"] {
+    border: 5px solid var(--hr-color);
+    padding: calc(12px * var(--card-size));
+    width: 100%;
+    height: auto;
+
+    overflow: hidden;
+}
+
+.card[data-separator="true"] {
+    border: none;
+    padding: 0px;
+    width: 100%;
+    height: fit-content;
+
+    backdrop-filter: none;
+
+    overflow: hidden;
+}
+
+.card[data-separator="true"]  .card-text {
+    background-color: #00000000;
+    padding: 0px;
+}
+
+.card[data-separator="true"]  .card-text-title {
+    font-size: calc(16px * var(--card-size));
+    text-align: left;
+}
+
+.card[data-separator="true"]  .card-text-subtitle {
+    font-size: calc(12px * var(--card-size));
+    text-align: left;
+    color: var(--text-color);
+}
+
+.card[data-no-click="true"]:hover {
+    transform: scale(1);
+}
+.card[data-no-click="true"]:active {
+    transform: scale(1);
 }
 
 #bottomPanel,
@@ -131,7 +245,6 @@ hr {
 }
 
 .ui-button {
-    z-index: 80;
     cursor: pointer;
     pointer-events: auto;
     background-color: var(--btn-color);
@@ -140,14 +253,22 @@ hr {
     border-bottom-left-radius: calc(12px * var(--btn-scale));
     border-top-right-radius: calc(12px * var(--btn-scale));
     min-height: calc(35px * var(--btn-scale));
-    gap: calc(8px * var(--btn-scale));
     display: flex;
     align-items: center;
     transition: opacity 300ms, transform 100ms, background-color 100ms;
+    overflow: hidden;
+    user-select: none;
 }
 
 .ui-button img {
 
+}
+
+.ui-button .expand-text {
+    overflow: hidden;
+    transition: width 300ms, margin 300ms;
+    margin-inline: 0px;
+    width: 0;
 }
 
 .ui-button.left {
@@ -168,6 +289,11 @@ hr {
 .ui-button:hover {
     transform: scale(1.1);
     background-color: var(--btn-hover-color);
+}
+
+.ui-button:hover .expand-text {
+    width: 80px;
+    margin-left: 10px;
 }
 
 .ui-button:active {

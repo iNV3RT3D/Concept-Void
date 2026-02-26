@@ -6,6 +6,8 @@ let isDragging = false;
 
 let currentX = 0, currentY = 0;
 let startX = 0, startY = 0;
+
+const MapContainer = document.getElementById("mapContainer");
 function EnableDragging() {
     function beginDragging(clientX, clientY) {
         isDragging = true;
@@ -34,8 +36,6 @@ function EnableDragging() {
         isDragging = false;
         document.body.style.cursor = 'default';
     }
-
-    const MapContainer = document.getElementById("mapContainer");
 
     MapContainer.addEventListener('mousedown', (e) => { beginDragging(e.clientX, e.clientY); });
     window.addEventListener('mousemove', (e) => { dragUpdate(e.clientX, e.clientY); });
@@ -72,6 +72,10 @@ EnableDragging();
 let bgmInitialized = false;
 
 const audioContext = new AudioContext();
+const primaryGain = audioContext.createGain()
+primaryGain.connect(audioContext.destination);
+
+primaryGain.gain.value = parseFloat(localStorage.getItem('musicVolume') || 0.5);
 
 //TODO: I could probably compress these three dictionaries into one.
 const bgmPaths = {
@@ -111,7 +115,7 @@ async function setupTracks() {
             const gain = bgmGains[bgmKey];
             source.loop = true;
             source.buffer = r;
-            source.connect(gain).connect(audioContext.destination);
+            source.connect(gain).connect(primaryGain);
             loaded+=1;
         })
     }
@@ -185,9 +189,53 @@ function interactInitialize(){
         if(!bgmInitialized){
             document.removeEventListener('mousedown', interactInitialize);
             prepareBgm().then(() => {
-
+                playBgmPreset(bgmPresets.primary)
             });
         }
     }
 }
 document.addEventListener('mousedown', interactInitialize)
+
+// ---------------------
+// UI BUTTON EVENTS
+// ---------------------
+
+document.addEventListener('displayCard', function(ev){
+    MapContainer.classList.add('blur')
+});
+document.addEventListener('hideCard', function(ev){
+    MapContainer.classList.remove('blur')
+});
+
+// Top/Bottom Bar
+document.getElementById("settingsBtn").onclick = function(){
+    if(currentCard == 'settings'){
+        backMenu();
+        return;
+    }
+    displayMenu('settings');
+}
+
+document.getElementById("backBtn").onclick = function(){
+    backMenu();
+}
+
+// Settings
+
+
+document.getElementById("closeBtn").onclick = function(){
+    hideMenu();
+}
+
+// Map Icons
+document.getElementById("About").onclick = function(){
+    displayMenu('about');
+}
+
+document.getElementById("ConceptVoid").onclick = function(){
+    displayMenu('conceptVoid');
+}
+
+document.getElementById("VoidCity").onclick = function(){
+    displayMenu('voidCity');
+}
