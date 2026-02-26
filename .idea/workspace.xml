@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26a752fe-f876-4fba-b644-dc8ecadccf11" name="Changes" comment="Some font styling">
-      <change afterPath="$PROJECT_DIR$/scripts/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/menusystem.js" afterDir="false" />
+    <list default="true" id="26a752fe-f876-4fba-b644-dc8ecadccf11" name="Changes" comment="Cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +26,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -95,7 +91,7 @@
       <workItem from="1771866247296" duration="18533000" />
       <workItem from="1771955333276" duration="20082000" />
       <workItem from="1772040083348" duration="9370000" />
-      <workItem from="1772127110503" duration="8207000" />
+      <workItem from="1772127110503" duration="9876000" />
     </task>
     <task id="LOCAL-00001" summary="Forgot to commit up to this point">
       <option name="closed" value="true" />
@@ -169,7 +165,23 @@
       <option name="project" value="LOCAL" />
       <updated>1771902638019</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finalizing base UI stuff.">
+      <option name="closed" value="true" />
+      <created>1772138828240</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1772138828240</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Cleanup">
+      <option name="closed" value="true" />
+      <created>1772139040140</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1772139040140</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +208,8 @@
     <MESSAGE value="Drag system complete. Example in HTML." />
     <MESSAGE value="Beginning implementation of info panels." />
     <MESSAGE value="Some font styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some font styling" />
+    <MESSAGE value="Finalizing base UI stuff." />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
   </component>
 </project>
