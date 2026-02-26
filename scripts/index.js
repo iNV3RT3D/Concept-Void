@@ -200,16 +200,16 @@ document.addEventListener('mousedown', interactInitialize)
 // UI BUTTON EVENTS
 // ---------------------
 
-document.addEventListener('displayCard', function(ev){
+document.addEventListener('displayCard', function(){
     MapContainer.classList.add('blur')
 });
-document.addEventListener('hideCard', function(ev){
+document.addEventListener('hideCard', function(){
     MapContainer.classList.remove('blur')
 });
 
 // Top/Bottom Bar
 document.getElementById("settingsBtn").onclick = function(){
-    if(currentCard == 'settings'){
+    if(currentCard === 'settings'){
         backMenu();
         return;
     }

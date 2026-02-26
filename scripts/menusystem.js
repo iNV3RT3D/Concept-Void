@@ -67,10 +67,10 @@ function backMenu() {
 }
 
 function getCardRefData(cardData){
-    if(cardData.cardId != undefined){
+    if(cardData.cardId !== undefined){
         return cards.find(card => card.id === cardData.cardId);
     }
-    if(cardData.groupId != undefined){
+    if(cardData.groupId !== undefined){
         const group = cardGroups.find(group => group.id === cardData.groupId)
         group.isGroup = true;
         return group;
@@ -106,7 +106,7 @@ function loadCardData(card, data){
     if (data.noClick) {card.dataset.noClick = data.noClick;}
 
     let html = `
-        ${data.image ? `<img src=${data.image}>` : ''}
+        ${data.image ? `<img src=${data.image} alt="">` : ''}
         ${data.title || data.subtitle ? `
         <div class="card-text">
             ${data.title ? `<div class="card-text-title">${data.title}</div>` : ''}
@@ -131,7 +131,7 @@ function loadCardData(card, data){
 
     if (data.menu) {
         html = `
-        ${data.image ? `<img src=${data.image}>` : ''}
+        ${data.image ? `<img src=${data.image} alt="">` : ''}
         ${data.menu.title || data.menu.subtitle ? `
         <div class="card-text">
             ${data.menu.title ? `<div class="card-text-title">${data.menu.title}</div>` : ''}

@@ -41,7 +41,7 @@ body {
     margin: 0;
     background: var(--bg);
     color: var(--white);
-    font-family: Union, Ubuntu;
+    font-family: Union, Ubuntu, arial, sans-serif;
 }
 
 #mainContainer {
@@ -190,7 +190,7 @@ hr {
 
 .card[data-separator="true"] {
     border: none;
-    padding: 0px;
+    padding: 0;
     width: 100%;
     height: fit-content;
 
@@ -201,7 +201,7 @@ hr {
 
 .card[data-separator="true"]  .card-text {
     background-color: #00000000;
-    padding: 0px;
+    padding: 0;
 }
 
 .card[data-separator="true"]  .card-text-title {
@@ -267,7 +267,7 @@ hr {
 .ui-button .expand-text {
     overflow: hidden;
     transition: width 300ms, margin 300ms;
-    margin-inline: 0px;
+    margin-inline: 0;
     width: 0;
 }
 
