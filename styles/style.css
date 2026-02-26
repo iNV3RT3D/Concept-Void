@@ -201,7 +201,7 @@ hr {
 
 .card[data-separator="true"]  .card-text {
     background-color: #00000000;
-    padding: 0;
+    padding: 5px 0 0;
 }
 
 .card[data-separator="true"]  .card-text-title {
