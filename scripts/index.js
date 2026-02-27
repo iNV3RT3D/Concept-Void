@@ -53,12 +53,6 @@ function updateParallaxTransforms(x, y, scale){
         const elementZ = parseFloat(element.dataset.z) || 1;
         const elementX = parseFloat(element.dataset.x) || 0;
         const elementY = parseFloat(element.dataset.y) || 0;
-        const spinRate = parseFloat(element.dataset.spinspeed) || 0;
-        const spin = parseFloat(element.dataset.spin) || 0;
-        console.log(spinRate)
-        if(spinRate !== 0){
-            element.dataset.spin = spin + spinRate;
-        }
 
         const fX = elementX * elementZ + x * elementZ;
         const fY = elementY * elementZ + y * elementZ;
