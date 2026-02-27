@@ -144,7 +144,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     uint seed = 42u;
     float noise = perlinNoise(vec3(dist + iTime * SCROLL, smoothRot/180.0, 0.0) * 0.25, 5, 0.6, 5.0, seed);
 
-    vec3 col = ColorRamp_Linear(dist*5.0+(noise*0.75),
+    vec3 col = ColorRamp_Linear(dist*5.0+(noise*0.5),
         vec4(1.0,0.0,1.0,0.45),
         vec4(0.5,0.0,1.0,0.5),
         vec4(0.5,0.0,0.7,0.7),
