@@ -103,7 +103,7 @@ body {
     background-size: cover;
 
     mix-blend-mode: screen;
-    animation: spin 120s infinite;
+    animation: spin linear 120s infinite;
 }
 
 @keyframes spin {
