@@ -2,19 +2,26 @@ async function loadShaderPath(canvas, vertexPath = null, fragmentPath = null){
     let vertex = null;
     let fragment = null;
 
+    console.log("GETTING SHADER DATA");
+
     if(vertexPath !== null){
+        console.log("FETCHING VERTEX");
+        console.log(vertexPath);
         const vertexFetch = await fetch(vertexPath);
         if (vertexFetch.ok){
             vertex = await vertexFetch.text();
         }
     }
     if(fragmentPath !== null){
+        console.log("FETCHING FRAGMENT");
+        console.log(fragmentPath);
         const fragmentFetch = await fetch(fragmentPath);
         if (fragmentFetch.ok){
             fragment = await fragmentFetch.text();
         }
     }
 
+    console.log("LOADING SHADER");
     loadShader(canvas, vertex, fragment);
 }
 

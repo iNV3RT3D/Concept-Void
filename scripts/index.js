@@ -247,4 +247,6 @@ document.getElementById("VoidCity").onclick = function(){
 // SHADERS
 // -------------------
 
-loadShaderPath(document.getElementById("spiralCanvas"), null, "assets/shaders/spiral.fragment");
+window.addEventListener("load", (event) => {
+    loadShaderPath(document.getElementById("spiralCanvas"), null, "assets/shaders/spiral.fragment");
+});
