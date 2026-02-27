@@ -88,6 +88,32 @@ body {
     justify-content: center;
 }
 
+.map-bound * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-spiral {
+    width: 1024px;
+    height: 1024px;
+    background-image: url(../assets/images/Spiral.png);
+    background-size: cover;
+
+    mix-blend-mode: screen;
+    animation: spin 120s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
 hr {
     border: none;
     border-top: 6px solid var(--hr-color);
@@ -339,12 +365,12 @@ hr {
 }
 
 .ui-map-button:hover {
-    transform: scale(1.2);
+    transform: translate(-50%, -50%) scale(1.2);
     background-color: var(--btn-map-hover-color);
 }
 
 .ui-map-button:active {
-    transform: scale(0.95);
+    transform: translate(-50%, -50%) scale(0.95);
     background-color: var(--btn-map-active-color);
 }
 
