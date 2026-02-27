@@ -58,7 +58,7 @@ function updateParallaxTransforms(x, y, scale){
         const fY = elementY * elementZ + y * elementZ;
         const fScale = scale * elementZ;
 
-        element.style.transform = `translate(${fX}px, ${fY}px) scale(${fScale}) rotate(${spin}deg)`;
+        element.style.transform = `translate(${fX}px, ${fY}px) scale(${fScale})`;
     }
 }
 
