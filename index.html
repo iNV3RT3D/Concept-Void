@@ -13,7 +13,7 @@
     <div id="mainContainer">
         <div id="mapContainer" class="map-container">
             <div class="map-bound" data-z="0.5" data-x="0" data-y="0">
-                <div class="center-spiral"></div>
+                <canvas id="spiralCanvas" width="2048" height="2048"></canvas>
                 <div id="About" class="ui-map-button" title="ABOUT!!??!!?!">
                     <img src="assets/icons/center.svg" draggable="false" alt="Logo" width="64" height="64">
                 </div>
@@ -63,6 +63,7 @@
         </div>
     </div>
     <script src="scripts/data.js"></script>
+    <script src="scripts/shaderloader.js"></script>
     <script src="scripts/menusystem.js"></script>
     <script src="scripts/index.js"></script>
 </body>

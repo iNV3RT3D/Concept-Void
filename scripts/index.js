@@ -242,3 +242,9 @@ document.getElementById("ConceptVoid").onclick = function(){
 document.getElementById("VoidCity").onclick = function(){
     displayMenu('voidCity');
 }
+
+// -------------------
+// SHADERS
+// -------------------
+
+loadShaderPath(document.getElementById("spiralCanvas"), null, "assets/shaders/spiral.fragment");
