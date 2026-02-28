@@ -243,6 +243,10 @@ document.getElementById("VoidCity").onclick = function(){
     displayMenu('voidCity');
 }
 
+document.getElementById("Drifters").onclick = function(){
+    displayMenu('drifters');
+}
+
 // -------------------
 // SHADERS
 // -------------------

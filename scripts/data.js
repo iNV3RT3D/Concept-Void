@@ -106,12 +106,22 @@ let cards = [
         id: "drifters",
         title: "Drifters",
         subtitle: "World travelling wanders.",
+        musicPreset: 'drifters',
         content: [
             {
                 id: "info",
+                title: "Who are Drifters?",
                 fullDisplay: true,
-                content: `Drifters are people who have no home origin, or are very far from it. They travel`,
-            }
+                banner: true,
+                content: `Drifters are people who have no home origin, or are very far from it. They frequently travel worlds in their pursuits.`,
+            },
+            {
+                id: "lostCategory",
+                title: "Nate crew",
+                fullDisplay: true,
+                separator: true,
+            },
+            {groupId: "lost"}
         ]
     },
     //SPECIES
@@ -153,7 +163,7 @@ let cards = [
     {
         id: "detrevni",
         title: "DETREVNi",
-        subtitle: "Sentient concept of... uh i dunno",
+        subtitle: "Mischievous Trouble-Maker",
         image: "assets/icons/center.svg",
         content:
             ``
@@ -161,7 +171,7 @@ let cards = [
     {
         id: "invertness",
         title: "iNVERTNESS",
-        subtitle: "Sentient concept of blah blah blah",
+        subtitle: "Fox-girl Void Entity!??!?",
         image: "assets/icons/center.svg",
         content:
             ``
@@ -173,7 +183,12 @@ let cards = [
         subtitle: "Big Brain Human",
         image: "assets/icons/center.svg",
         content:
-            ``
+            `<hr>
+            Nathan is a workaholic roboticist and the creator of SAM. He frequently gets lost in his work, originally interacting little with anyone other than SAM.
+            He tends to very blunt and literal with his speech, and easily misses hidden meanings in other people's words.
+            <br><br>
+            Overconfident in his knowledge, he often forgoes safety precautions and warnings given by SAM, believing "Everything will be fine." That is, 
+            until one of Nathan's experiments get them stranded in another world.`
     },
     {
         id: "sam",
@@ -181,7 +196,13 @@ let cards = [
         subtitle: "Emotional Machine",
         image: "assets/icons/center.svg",
         content:
-            ``
+            `<hr>
+            SAM is an AI created by Nathan Wallis to assist in matters outside his skill set. Capable of experiencing the full range of human emotion,
+            they're often described as more human than Nathan. Nearly every piece of technology Nathan has created is designed with some system allowing 
+            SAM to monitor and interact with it freely.
+            <br><br>
+            When Nathan was being pulled into another world, SAM transferred themself into the portable AI module also being pulled in nearby, in order
+            to follow Nathan.`
     },
     {
         id: "sasha",
@@ -189,7 +210,12 @@ let cards = [
         subtitle: "Cool Slime",
         image: "assets/icons/center.svg",
         content:
-            ``
+            `<hr>
+            Sasha is a slime with abnormal, human-like intelligence due to a rare condition. She was found by Nathan and SAM some time after their first
+            accidental warp, before she took a human form.
+            <br><br>
+            During her time with Nathan and SAM, she took on a human appearance and a more battle hungry personality. Despite Nathan's many attempts to prevent
+            such, Sasha frequently ends up dragging the group into fights they would rather not be in.`
     },
 ]
 
@@ -204,6 +230,14 @@ let cardGroups = [
     },
     {
         id: "drifters",
+        cards: [
+            {cardId: "nathan"},
+            {cardId: "sam"},
+            {cardId: "sasha"}
+        ]
+    },
+    {
+        id: "lost",
         cards: [
             {cardId: "nathan"},
             {cardId: "sam"},
