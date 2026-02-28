@@ -247,6 +247,10 @@ document.getElementById("Drifters").onclick = function(){
     displayMenu('drifters');
 }
 
+document.getElementById("OtherCharacters").onclick = function(){
+    displayMenu('otherCharacters');
+}
+
 // -------------------
 // SHADERS
 // -------------------

@@ -1,7 +1,4 @@
 const infoContainer = document.getElementById("infoContainer");
-const infoContainerHeaderTitle = document.getElementById("infoHeaderTitle");
-const infoHeaderSubtitle = document.getElementById("infoHeaderSubtitle");
-const infoBody = document.getElementById("infoBody");
 
 const cardHistory = [];
 let currentCard = '';
@@ -12,14 +9,66 @@ function getMenuData(id){
     return cards.find(menu => menu.id === id);
 }
 
+function loadMenuStyle(layout){
+    let html =
+        `<div id="infoHeader" class="info-header">
+            <div id="infoHeaderTitle" class="info-header-title">Concept Void</div>
+            <div id="infoHeaderSubtitle" class="info-header-description">The place of lost ideas</div>
+            <hr>
+        </div>
+        <div id="infoBody" class="info-body">
+
+        </div>`
+    infoContainer.className = "info-container";
+
+    if(layout === "character"){
+        html =
+            `
+            <div id="infoSideBar" class="info-side-bar">
+                <img id="infoImage" class="info-image" src="" alt="">
+                <div id="infoHeaderTitle" class="info-header-title" style="text-align: center">Concept Void</div>
+            </div>
+            <div>
+                <div id="infoHeader" class="info-header">
+                    <div id="infoHeaderTitle" class="info-header-title">Concept Void</div>
+                    <div id="infoHeaderSubtitle" class="info-header-description">The place of lost ideas</div>
+                    <hr>
+                </div>
+                <div id="infoBody" class="info-body">
+        
+                </div>
+            </div>`
+        infoContainer.classList.add("character")
+    }
+
+    infoContainer.innerHTML = html;
+}
+
 const displayCardEvent = new Event("displayCard")
 function displayMenu(id = null, data = null){
     if(!data){
         data = getMenuData(id);
     }
     infoContainer.classList.remove("hidden");
-    infoContainerHeaderTitle.innerHTML = data.title;
-    infoHeaderSubtitle.innerHTML = data.subtitle;
+
+    loadMenuStyle(data.layout);
+
+    const infoContainerHeaderTitle = document.querySelectorAll(".info-header-title");
+    const infoHeaderSubtitle = document.querySelectorAll(".info-header-description");
+    const infoImages = document.querySelectorAll(".info-image");
+    const infoBody = document.getElementById("infoBody");
+
+    for (let i = 0; i < infoContainerHeaderTitle.length; i++) {
+        infoContainerHeaderTitle[i].innerHTML = data.title;
+    }
+    for (let i = 0; i < infoHeaderSubtitle.length; i++) {
+        infoHeaderSubtitle[i].innerHTML = data.subtitle;
+    }
+    for (let i = 0; i < infoImages.length; i++) {
+        infoImages[i].src = data.image;
+    }
+
+    const root = document.documentElement
 
     infoBody.innerHTML = '';
 
@@ -32,6 +81,10 @@ function displayMenu(id = null, data = null){
 
     displayCardEvent.data = data;
     document.dispatchEvent(displayCardEvent);
+
+    if(data.color){
+        root.style.setProperty("--main-color", data.color);
+    }
 
     if (Array.isArray(data.content)) {
         populateCards(data.content);
@@ -142,9 +195,16 @@ function loadCardData(card, data){
     }
 
     if (!data.noClick){
-        card.addEventListener("click", function () {
-            displayMenu(null, data);
-        })
+        if(data.redirect){
+            card.addEventListener("click", function () {
+                window.open(data.redirect);
+            })
+        }
+        else {
+            card.addEventListener("click", function () {
+                displayMenu(null, data);
+            })
+        }
     }
 
     card.innerHTML = html;
