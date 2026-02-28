@@ -251,6 +251,6 @@ document.getElementById("Drifters").onclick = function(){
 // SHADERS
 // -------------------
 
-window.addEventListener("load", (event) => {
+window.addEventListener("load", () => {
     loadShaderPath(document.getElementById("spiralCanvas"), null, "assets/shaders/spiral.fragment");
 });
