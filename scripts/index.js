@@ -252,9 +252,36 @@ document.getElementById("OtherCharacters").onclick = function(){
 }
 
 // -------------------
-// SHADERS
+// VISUALS
 // -------------------
 
 window.addEventListener("load", () => {
     loadShaderPath(document.getElementById("spiralCanvas"), null, "assets/shaders/spiral.fragment");
 });
+
+const maxPop = 30;
+function populateConceptContainer(container){
+    for (let i = 0; i < maxPop; i++) {
+        const div = document.createElement("div");
+        div.classList.add('concept');
+        div.style.position = "absolute";
+        div.style.animationDelay = `${Math.random()*-5}s`;
+        div.style.animationDuration = `${Math.random()*3+2}s`;
+        const x = (Math.random()-0.5)*8000;
+        const y = (Math.random()-0.5)*8000;
+        const scale = (Math.random()+0.3);
+        const rot = Math.random()*360;
+        div.style.transform = `rotate(${rot}deg) translate(${x}px, ${y}px) scale(${scale})`;
+        container.appendChild(div);
+    }
+}
+
+function populateConceptContainers(){
+    const containers = document.getElementsByClassName("concept-container");
+    for (let i = 0; i < containers.length; i++) {
+        const container = containers[i];
+        populateConceptContainer(container);
+    }
+}
+
+populateConceptContainers()

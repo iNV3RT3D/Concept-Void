@@ -98,6 +98,26 @@ body {
     border: none;
 }
 
+.concept-container {
+    pointer-events: none;
+}
+
+.concept {
+    width: 40px;
+    height: 40px;
+    border-radius: 25%;
+    filter: blur(0.4rem);
+
+    animation: blink 3s infinite;
+}
+
+@keyframes blink {
+    0%{background-color: #c100ff}
+    50%{background-color: rgba(193, 0, 255, 0.44)
+    }
+    100%{background-color: #c100ff}
+}
+
 .center-spiral {
     width: 1024px;
     height: 1024px;
