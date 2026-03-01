@@ -69,7 +69,7 @@ let cards = [
     {
         id: "conceptVoid",
         title: "The Concept Void",
-        subtitle: "The only thing that can truly be created or destroyed are what we keep in our minds.",
+        subtitle: "Place of lost ideas.",
         musicPreset: 'primary',
         color: "#6a0085",
         content: [

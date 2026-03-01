@@ -28,7 +28,7 @@ function loadMenuStyle(layout){
                 <img id="infoImage" class="info-image" src="" alt="">
                 <div id="infoHeaderTitle" class="info-header-title" style="text-align: center">Concept Void</div>
             </div>
-            <div>
+            <div id="characterInfo">
                 <div id="infoHeader" class="info-header">
                     <div id="infoHeaderTitle" class="info-header-title">Concept Void</div>
                     <div id="infoHeaderSubtitle" class="info-header-description">The place of lost ideas</div>
@@ -83,7 +83,10 @@ function displayMenu(id = null, data = null){
     document.dispatchEvent(displayCardEvent);
 
     if(data.color){
-        root.style.setProperty("--main-color", data.color);
+        let color = new Color(data.color);
+        root.style.setProperty("--main-color", color.toString());
+        color.lch.l *= 2;
+        root.style.setProperty("--subtitle-color", color.toString());
     }
 
     if (Array.isArray(data.content)) {
