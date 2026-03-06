@@ -274,6 +274,10 @@ wrapCharacters(loadingText);
 
 window.addEventListener("load", () => {
     loadShaderPath(document.getElementById("spiralCanvas"), null, "assets/shaders/spiral.fragment");
+    const url = new URL(window.location.href);
+    if(url.searchParams.has("card")){
+        displayMenu(url.searchParams.get("card"));
+    }
 
     const loadingDisplay = document.getElementById("loadingDisplay");
     const mainContainer = document.getElementById("mainContainer");

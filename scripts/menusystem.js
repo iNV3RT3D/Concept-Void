@@ -82,6 +82,10 @@ function displayMenu(id = null, data = null){
     displayCardEvent.data = data;
     document.dispatchEvent(displayCardEvent);
 
+    const url = new URL(window.location.href);
+    url.searchParams.set("card", currentCard);
+    history.pushState({}, '', url);
+
     if(data.color){
         let color = new Color(data.color);
         root.style.setProperty("--main-color", color.toString());
@@ -94,7 +98,9 @@ function displayMenu(id = null, data = null){
         return;
     }
 
-    infoBody.innerHTML = data.content;
+    let html = `${data.content ? `${data.content}` : ''}`
+
+    infoBody.innerHTML = html;
 }
 
 const hideCardEvent = new Event("hideCard")
@@ -106,6 +112,10 @@ function hideMenu(){
     document.getElementById("backBtn").classList.add("hidden");
 
     document.dispatchEvent(hideCardEvent);
+
+    const url = new URL(window.location.href);
+    url.searchParams.delete("card");
+    history.pushState({}, '', url);
 
     currentCard = '';
 }
