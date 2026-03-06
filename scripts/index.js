@@ -255,8 +255,31 @@ document.getElementById("OtherCharacters").onclick = function(){
 // VISUALS
 // -------------------
 
+const loadingText = document.getElementById("loadingText");
+function wrapCharacters(element) {
+    const text = element.textContent;
+    element.textContent = ''; // Clear the original text
+    for (let i = 0; i < text.length; i++) {
+        const span = document.createElement('span');
+        span.textContent = text[i];
+        // Add a class for styling/animation targeting
+        span.classList.add('char');
+        // Optional: use CSS variables for staggered delays
+        span.style.setProperty('--char-index', i);
+        element.appendChild(span);
+    }
+}
+
+wrapCharacters(loadingText);
+
 window.addEventListener("load", () => {
     loadShaderPath(document.getElementById("spiralCanvas"), null, "assets/shaders/spiral.fragment");
+
+    const loadingDisplay = document.getElementById("loadingDisplay");
+    const mainContainer = document.getElementById("mainContainer");
+
+    loadingDisplay.classList.add('hidden');
+    mainContainer.classList.remove('hidden');
 });
 
 const maxPop = 30;
