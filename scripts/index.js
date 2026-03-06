@@ -256,6 +256,8 @@ document.getElementById("OtherCharacters").onclick = function(){
 // -------------------
 
 const loadingText = document.getElementById("loadingText");
+const loadingDisplay = document.getElementById("loadingDisplay");
+const mainContainer = document.getElementById("mainContainer");
 function wrapCharacters(element) {
     const text = element.textContent;
     element.textContent = ''; // Clear the original text
@@ -278,9 +280,6 @@ window.addEventListener("load", () => {
     if(url.searchParams.has("card")){
         displayMenu(url.searchParams.get("card"));
     }
-
-    const loadingDisplay = document.getElementById("loadingDisplay");
-    const mainContainer = document.getElementById("mainContainer");
 
     loadingDisplay.classList.add('hidden');
     mainContainer.classList.remove('hidden');
