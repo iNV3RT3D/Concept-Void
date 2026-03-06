@@ -167,7 +167,8 @@ let cards = [
                 content:
                     `As concepts in the void drift, occasionally enough can gather together take a physical form. That is what void entities are, a physical manifestation of concepts. A void entity is still capable of gathering more concepts after forming.<br>
                     <h4>Sentient Void Entities</h4>
-                    In the rare case that enough aspects of what a mind is collect together, void entities can gain the ability to think. Since void entities are concepts, and sentient void entities are capable of thinking of concepts, nearly all sentient void entities are shape-shifters and reality-benders. The extent of these abilities vary greatly.<br><br>
+                    In the rare case that enough aspects of what a mind is collect together, void entities can gain the ability to think. Since void entities are concepts, and sentient void entities are capable of thinking of concepts, nearly all sentient void entities are shape-shifters and reality-benders. The extent of these abilities vary greatly.<br>
+                    <br>
                     A void entity's reality-bending almost never works directly on other sentient beings, void entity or not, due to conflicting with a person's concept of self.`
             },
             {groupId: "voidEntities"}
@@ -197,24 +198,39 @@ let cards = [
         id: "invertedC",
         title: "iNVERTED",
         subtitle: "Sentient concept of void",
-        image: "assets/images/reference/voidentities/iNVERTEDIcon.png",
+        image: "assets/images/gallery/voidentities/iNVERTEDIcon.png",
         layout: "character",
         content:
-            `Nearly every person in the void knows of iNVERTED, given that they are the one that shaped the majority of it. 
+            `Nearly every person in the void knows of iNVERTED, given that they are the one that shaped the majority of it.<br>
             <br>
             iNVERTED's primary concept is 'void/nothingness', effectively making the entirety of the Concept Void an extension of themself. <br>
+            <br>
             As nothingness is generally seen as an unstoppable force, iNVERTED has extremely powerful reality-bending capabilities. Powerful 
             enough to ignore the usual restrictions preventing use on other beings. However, they usually only use these abilities on themself, 
-            as it would be rude to use it on someone without their permission.`
+            as it would be rude to use it on someone without their permission.
+            <hr>
+            <div style="width: 100%">Reference: </div>
+            <img src="assets/images/gallery/voidentities/iNVERTED V10.png" alt="" width="100%">`
     },
     {
         id: "detrevni",
         title: "DETREVNi",
         subtitle: "Mischievous Trouble-Maker",
-        image: "assets/icons/center.svg",
+        image: "assets/images/gallery/voidentities/DetrevniIcon.png",
         layout: "character",
         content:
-            ``
+            `A void entity that seems to take nothing seriously, constantly joking and messing around with other people.<br>
+            <br>
+            Better than most with shape-shifting and reality-bending, DETREVNi uses his abilities to do whatever amusing idea for a bit he has. Often, this 
+            includes pestering another with his shenanigans. DETREVNi has no ill-intent while doing this, he just finds stuff funny and hopes other's will
+            too.<br>
+            <br>
+            DETREVNi's ability to shapeshift and bend reality is tied to how he feels, or more specifically, how funny he thinks something is / will be.
+            Given the conditions are right, DETREVNi can rival even the strongest of void entities. However, in situations DETREVNi finds serious or 
+            stressful, he can completely lose control of his abilities.
+            <hr>
+            <div style="width: 100%">Reference: </div>
+            <img src="assets/images/gallery/voidentities/DetrevniRef.png" alt="" width="100%">`
     },
     {
         id: "invertness",
@@ -230,7 +246,7 @@ let cards = [
         id: "nathan",
         title: "Nathan Wallis",
         subtitle: "Big Brain Human",
-        image: "assets/images/reference/drifters/Nate.png",
+        image: "assets/images/gallery/drifters/Nate.png",
         layout: "character",
         content:
             `Nathan is a workaholic roboticist and the creator of SAM. He frequently gets lost in his work, originally interacting little with anyone other than SAM.
@@ -257,7 +273,7 @@ let cards = [
         id: "sasha",
         title: "Sasha Shaw",
         subtitle: "Cool Slime",
-        image: "assets/images/reference/drifters/Sasha.png",
+        image: "assets/images/gallery/drifters/Sasha.png",
         layout: "character",
         content:
             `Sasha is a slime with abnormal, human-like intelligence due to a rare condition. She was found by Nathan and SAM some time after their first
